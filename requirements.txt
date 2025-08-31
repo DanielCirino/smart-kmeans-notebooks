@@ -1,0 +1,15 @@
+pyyaml
+numpy
+pandas
+geopandas
+scikit-learn
+matplotlib
+plotly
+dash
+werkzeug
+dash-bootstrap-components
+openpyxl
+xlrd
+pytest
+seaborn
+fastparquet
