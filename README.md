@@ -7,9 +7,11 @@ This repository contains computational notebooks and analysis code for research 
 ```
 ├── README.md                     # Project documentation
 ├── ALGORITHM.md                  # Detailed algorithm documentation and pseudocode
+├── LICENSE                       # MIT License
+├── CITATION.cff                  # Standard citation format
+├── VERSION                       # Version information
 ├── requirements.txt              # Python dependencies
 ├── config.yaml                   # Configuration settings
-├── LICENSE                       # MIT License
 ├── .gitignore                   # Git ignore rules
 ├── notebooks/                   # Jupyter notebooks for analysis
 │   ├── 01_data_exploration.ipynb    # Exploratory Data Analysis
@@ -171,6 +173,39 @@ All analyses are designed to be fully reproducible:
 - **Deterministic Processing**: All data processing steps are deterministic
 - **Configuration Management**: All parameters controlled via `config.yaml`
 - **Version Control**: Complete project history tracked in Git
+- **Environment Specification**: Exact dependency versions in `requirements.txt`
+
+### Reproducibility Checklist
+- [ ] Install exact dependencies: `pip install -r requirements.txt`
+- [ ] Use provided configuration: `config.yaml`
+- [ ] Run notebooks in sequential order (01 → 02 → 03 → 04)
+- [ ] Verify random seeds are set consistently
+- [ ] Check output matches expected results in `data/results/`
+
+## Data Availability Statement
+
+### Code Availability
+- **Repository**: Available at [https://github.com/DanielCirino/smart-kmeans-notebooks](https://github.com/DanielCirino/smart-kmeans-notebooks)
+- **License**: MIT License - unrestricted use, modification, and distribution
+- **Version**: v1.0.0 (as of August 2025)
+- **DOI**: *[To be assigned upon publication/archival]*
+
+### Data Availability  
+- **Source Data**: Brazilian Census 2010 social exclusion indicators (public domain)
+- **Processed Data**: All processed datasets included in `data/processed/`
+- **Raw Data**: Original Excel files included in `data/raw/`
+- **Access**: No restrictions - all data and code freely available
+
+### Software Requirements
+- **Python**: 3.8 or higher
+- **Dependencies**: Listed in `requirements.txt`
+- **Platform**: Cross-platform (Windows, macOS, Linux)
+- **Computational Requirements**: Standard desktop/laptop (no special hardware required)
+
+### Contact for Code Access
+For questions about code implementation or data access:
+- **GitHub Issues**: [Repository Issues Page](https://github.com/DanielCirino/smart-kmeans-notebooks/issues)
+- **Direct Contact**: [Open GitHub issue for fastest response]
 
 ## Key Features
 
@@ -193,22 +228,43 @@ All analyses are designed to be fully reproducible:
 If you use this code in your research, please cite:
 
 ```bibtex
-@misc{smartkmeans2025,
+@software{smartkmeans2025,
   title={Smart K-Means Analysis for Social Exclusion Indicators},
-  author={Daniel Cirino Martins},
+  author={Martins, Daniel Cirino},
   year={2025},
+  version={1.0.0},
   publisher={GitHub},
-  url={https://github.com/DanielCirino/smart-kmeans-notebooks}
+  url={https://github.com/DanielCirino/smart-kmeans-notebooks},
+  license={MIT}
 }
 ```
 
+**For academic publications, please also include this Data Availability Statement:**
+
+> "The code for the Smart K-Means analysis is freely available under MIT License at https://github.com/DanielCirino/smart-kmeans-notebooks. All data and analysis scripts required to reproduce the findings are included in the repository. The implementation follows PLOS guidelines for code sharing and includes comprehensive documentation for reproducibility."
+
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
+
+**License Summary:**
+- ✅ Commercial use allowed
+- ✅ Modification allowed  
+- ✅ Distribution allowed
+- ✅ Private use allowed
+- ❗ No warranty provided
+- ❗ License and copyright notice required
 
 ## Contact
 
-For questions or collaboration opportunities, please open an issue on GitHub.
+For questions, collaborations, or support:
+- **Issues**: Open a GitHub issue for technical questions
+- **Discussions**: Use GitHub Discussions for general questions
+- **Contributions**: See contributing guidelines above
+
+---
+
+**Compliance Note**: This repository follows PLOS Computational Biology guidelines for code sharing, ensuring full reproducibility and unrestricted access to all research code and data.
 
 ## Contact
 [Add your contact information]

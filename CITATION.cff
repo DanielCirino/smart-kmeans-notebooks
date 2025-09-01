@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Smart K-Means Analysis for Social Exclusion Indicators"
+version: 1.0.0
+date-released: 2025-08-31
+url: "https://github.com/DanielCirino/smart-kmeans-notebooks"
+repository-code: "https://github.com/DanielCirino/smart-kmeans-notebooks"
+license: MIT
+authors:
+  - family-names: "Martins"
+    given-names: "Daniel Cirino"
+    orcid: "https://orcid.org/0000-0000-0000-0000"  # Replace with actual ORCID
+abstract: >-
+  A Smart K-Means clustering algorithm with entropy-based feature selection
+  for analyzing social exclusion indicators. The algorithm systematically
+  determines optimal cluster numbers while selecting relevant features based
+  on Shannon entropy analysis. Includes comprehensive validation using multiple
+  clustering metrics and follows international standards for reproducible research.
+keywords:
+  - clustering
+  - k-means
+  - feature-selection
+  - entropy
+  - social-indicators
+  - unsupervised-learning
+  - machine-learning
