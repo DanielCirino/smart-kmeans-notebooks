@@ -13,13 +13,50 @@ authors:
     given-names: "Daniel Cirino"
     orcid: "https://orcid.org/0009-0002-5304-9185"
     affiliation: "Universidade Estadual de Montes Claros"
+    email: "it.danielcirino@gmail.com"
+  - family-names: "D'Angelo"
+    given-names: "Marcos Flávio Silveira Vasconcelos"
+    affiliation: "Universidade Estadual de Montes Claros"
+    email: "marcos.dangelo@unimontes.br"
+  - family-names: "Libório"
+    given-names: "Matheus Pereira"
+    affiliation: "Universidade Estadual de Montes Claros"
+    email: "m4th32s@gmail.com"
+  - family-names: "Ekel"
+    given-names: "Petr"
+    affiliation: "Pontifícia Universidade Católica de Minas Gerais"
+    email: "petr.ekel2709@gmail.com"
+  - family-names: "Rocha"
+    given-names: "Honovan Paz"
+    affiliation: "Universidade Estadual de Montes Claros"
+    email: "honovan.rocha@ufvjm.edu.br"
+  - family-names: "Vieira"
+    given-names: "Douglas Alexandre Gomes"
+    affiliation: "Centro Federal de Educação Tecnológica de Minas Gerais"
+    email: "douglas.agv@gmail.com"
+  - family-names: "Ribeiro"
+    given-names: "Laura Cozzi"
+    affiliation: "Pontifícia Universidade Católica de Minas Gerais"
+    email: "laura.cozzi.ribeiro@gmail.com"
+  - family-names: "Guimarães"
+    given-names: "Maria Fernanda Oliveira"
+    affiliation: "Pontifícia Universidade Católica de Minas Gerais"
+    email: "mariafernanda.guimaraes810@gmail.com"
 abstract: >-
-  A Smart K-Means clustering algorithm with entropy-based feature selection
-  for analyzing social exclusion indicators. The algorithm systematically
-  determines optimal cluster numbers while selecting relevant features based
-  on Shannon entropy analysis. Includes comprehensive validation using multiple
-  clustering metrics and follows international standards for reproducible research.
+  This exploratory research proposes a new method for representing multidimensional
+  phenomena based on the k-means algorithm. The so-called "smart k-means" uses the Shannon
+  entropy index to identify and discard individual indicators with low informational diversity, which
+  do not distinguish decision-making units adequately. This discard process ensures groups have
+  acceptable cohesion and resolution and are within the number of group arrangements desired by
+  the decision maker. The results of applying the new method to represent social exclusion show
+  that discarding individual indicators of low informational diversity ensures obtaining internally
+  homogeneous and externally heterogeneous groups. These results contribute to a reliable
+  representation of the multidimensional phenomenon, facilitating its understanding and the
+  development of public policies to reduce it.
 keywords:
+  - multidimensional-problems
+  - composite-indicators
+  - informational-diversity
   - clustering
   - k-means
   - feature-selection
@@ -27,15 +64,35 @@ keywords:
   - social-indicators
   - unsupervised-learning
   - machine-learning
-  - computational-biology
-  - data-science
+  - shannon-entropy
 references:
-  - type: article
-    title: "An entropy-based approach for automatic k-means clustering"
+  - type: conference-paper
+    title: "New Method for Representing Multidimensional Social Phenomena: Smart K-Means"
     authors:
       - family-names: "Martins"
         given-names: "Daniel Cirino"
-    year: 2025
+      - family-names: "D'Angelo"
+        given-names: "Marcos Flávio Silveira Vasconcelos"
+      - family-names: "Libório"
+        given-names: "Matheus Pereira"
+      - family-names: "Ekel"
+        given-names: "Petr"
+      - family-names: "Rocha"
+        given-names: "Honovan Paz"
+      - family-names: "Vieira"
+        given-names: "Douglas Alexandre Gomes"
+      - family-names: "Ribeiro"
+        given-names: "Laura Cozzi"
+      - family-names: "Guimarães"
+        given-names: "Maria Fernanda Oliveira"
+    conference:
+      name: "LVI Simpósio Brasileiro de Pesquisa Operacional"
+      abbreviation: "SBPO 2024"
+      location: "Juiz de Fora, MG, Brasil"
+    year: 2024
+    month: 9
+    pages: "1-12"
+    publisher: "Galoa Proceedings"
 contact:
   - family-names: "Martins"
     given-names: "Daniel Cirino"

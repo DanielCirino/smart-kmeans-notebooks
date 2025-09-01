@@ -230,12 +230,22 @@ If you use this code in your research, please cite:
 ```bibtex
 @software{smartkmeans2025,
   title={Smart K-Means Analysis for Social Exclusion Indicators},
-  author={Martins, Daniel Cirino},
+  author={Martins, Daniel Cirino and D'Angelo, Marcos Flávio Silveira Vasconcelos and Libório, Matheus Pereira and Ekel, Petr and Rocha, Honovan Paz and Vieira, Douglas Alexandre Gomes and Ribeiro, Laura Cozzi and Guimarães, Maria Fernanda Oliveira},
   year={2025},
   version={1.0.0},
   publisher={GitHub},
   url={https://github.com/DanielCirino/smart-kmeans-notebooks},
   license={MIT}
+}
+
+@inproceedings{martins2024kmeans,
+  title={New Method for Representing Multidimensional Social Phenomena: Smart K-Means},
+  author={Martins, Daniel Cirino and D'Angelo, Marcos Flávio Silveira Vasconcelos and Libório, Matheus Pereira and Ekel, Petr and Rocha, Honovan Paz and Vieira, Douglas Alexandre Gomes and Ribeiro, Laura Cozzi and Guimarães, Maria Fernanda Oliveira},
+  booktitle={Anais do LVI Simpósio Brasileiro de Pesquisa Operacional},
+  pages={1--12},
+  year={2024},
+  organization={SBPO},
+  address={Juiz de Fora, MG, Brasil}
 }
 ```
 
@@ -257,9 +267,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-**Author**: Daniel Cirino Martins  
-**ORCID**: [0009-0002-5304-9185](https://orcid.org/0009-0002-5304-9185)  
-**Affiliation**: Universidade Estadual de Montes Claros (UNIMONTES)
+**Authors**:
+- **Daniel Cirino Martins** - [ORCID: 0009-0002-5304-9185](https://orcid.org/0009-0002-5304-9185) - UNIMONTES - it.danielcirino@gmail.com
+- **Marcos Flávio Silveira Vasconcelos D'Angelo** - UNIMONTES - marcos.dangelo@unimontes.br
+- **Matheus Pereira Libório** - UNIMONTES - m4th32s@gmail.com
+- **Petr Ekel** - PUC Minas - petr.ekel2709@gmail.com
+- **Honovan Paz Rocha** - UNIMONTES - honovan.rocha@ufvjm.edu.br
+- **Douglas Alexandre Gomes Vieira** - CEFET-MG - douglas.agv@gmail.com
+- **Laura Cozzi Ribeiro** - PUC Minas - laura.cozzi.ribeiro@gmail.com
+- **Maria Fernanda Oliveira Guimarães** - PUC Minas - mariafernanda.guimaraes810@gmail.com
 
 For questions, collaborations, or support:
 - **Issues**: Open a GitHub issue for technical questions

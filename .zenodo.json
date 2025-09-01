@@ -1,14 +1,45 @@
 {
   "title": "Smart K-Means Analysis for Social Exclusion Indicators",
-  "description": "A Smart K-Means clustering algorithm with entropy-based feature selection for analyzing social exclusion indicators. The algorithm systematically determines optimal cluster numbers while selecting relevant features based on Shannon entropy analysis. Includes comprehensive validation using multiple clustering metrics and follows international standards for reproducible research.",
+  "description": "This exploratory research proposes a new method for representing multidimensional phenomena based on the k-means algorithm. The so-called 'smart k-means' uses the Shannon entropy index to identify and discard individual indicators with low informational diversity, which do not distinguish decision-making units adequately. This discard process ensures groups have acceptable cohesion and resolution and are within the number of group arrangements desired by the decision maker. The results of applying the new method to represent social exclusion show that discarding individual indicators of low informational diversity ensures obtaining internally homogeneous and externally heterogeneous groups. These results contribute to a reliable representation of the multidimensional phenomenon, facilitating its understanding and the development of public policies to reduce it.",
   "creators": [
     {
       "name": "Martins, Daniel Cirino",
       "orcid": "0009-0002-5304-9185",
-      "affiliation": "Universidade Estadual de Montes Claros (State University of Montes Claros)"
+      "affiliation": "Universidade Estadual de Montes Claros"
+    },
+    {
+      "name": "D'Angelo, Marcos Flávio Silveira Vasconcelos",
+      "affiliation": "Universidade Estadual de Montes Claros"
+    },
+    {
+      "name": "Libório, Matheus Pereira",
+      "affiliation": "Universidade Estadual de Montes Claros"
+    },
+    {
+      "name": "Ekel, Petr",
+      "affiliation": "Pontifícia Universidade Católica de Minas Gerais"
+    },
+    {
+      "name": "Rocha, Honovan Paz",
+      "affiliation": "Universidade Estadual de Montes Claros"
+    },
+    {
+      "name": "Vieira, Douglas Alexandre Gomes",
+      "affiliation": "Centro Federal de Educação Tecnológica de Minas Gerais"
+    },
+    {
+      "name": "Ribeiro, Laura Cozzi",
+      "affiliation": "Pontifícia Universidade Católica de Minas Gerais"
+    },
+    {
+      "name": "Guimarães, Maria Fernanda Oliveira",
+      "affiliation": "Pontifícia Universidade Católica de Minas Gerais"
     }
   ],
   "keywords": [
+    "multidimensional-problems",
+    "composite-indicators", 
+    "informational-diversity",
     "clustering",
     "k-means", 
     "feature-selection",
@@ -16,8 +47,7 @@
     "social-indicators",
     "unsupervised-learning",
     "machine-learning",
-    "computational-biology",
-    "data-science"
+    "shannon-entropy"
   ],
   "license": "MIT",
   "upload_type": "software",
@@ -31,6 +61,11 @@
       "relation": "isSupplementTo",
       "identifier": "https://github.com/DanielCirino/smart-kmeans-notebooks",
       "resource_type": "software"
+    },
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://proceedings.science/sbpo-2024/trabalhos/algoritmo-k-means-inteligente-com-selecao-de-caracteristicas-baseada-em-entropia",
+      "resource_type": "publication-conferencepaper"
     }
   ]
 }
