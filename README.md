@@ -258,7 +258,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contact
 
 **Author**: Daniel Cirino Martins  
-**ORCID**: [0009-0002-5304-9185](https://orcid.org/0009-0002-5304-9185)
+**ORCID**: [0009-0002-5304-9185](https://orcid.org/0009-0002-5304-9185)  
+**Affiliation**: Universidade Estadual de Montes Claros (UNIMONTES)
 
 For questions, collaborations, or support:
 - **Issues**: Open a GitHub issue for technical questions

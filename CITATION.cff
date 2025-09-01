@@ -7,10 +7,12 @@ date-released: 2025-08-31
 url: "https://github.com/DanielCirino/smart-kmeans-notebooks"
 repository-code: "https://github.com/DanielCirino/smart-kmeans-notebooks"
 license: MIT
+doi: 10.5281/zenodo.PENDING
 authors:
   - family-names: "Martins"
     given-names: "Daniel Cirino"
-    orcid: "https://orcid.org/0009-0002-5304-9185" 
+    orcid: "https://orcid.org/0009-0002-5304-9185"
+    affiliation: "Universidade Estadual de Montes Claros"
 abstract: >-
   A Smart K-Means clustering algorithm with entropy-based feature selection
   for analyzing social exclusion indicators. The algorithm systematically
@@ -25,3 +27,17 @@ keywords:
   - social-indicators
   - unsupervised-learning
   - machine-learning
+  - computational-biology
+  - data-science
+references:
+  - type: article
+    title: "An entropy-based approach for automatic k-means clustering"
+    authors:
+      - family-names: "Martins"
+        given-names: "Daniel Cirino"
+    year: 2025
+contact:
+  - family-names: "Martins"
+    given-names: "Daniel Cirino"
+    orcid: "https://orcid.org/0009-0002-5304-9185"
+    affiliation: "Universidade Estadual de Montes Claros"
