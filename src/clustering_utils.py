@@ -25,12 +25,14 @@ from src.settings import load_config
 
 def gap_statistic_method(data, nrefs=3, min_clusters=2, max_clusters=15):
     """
-    Calcular a quantidade ótima de clusters utilizando o método Gap Statistic
+    Calculate the optimal number of clusters using the Gap Statistic method.
+    
     Params:
-        data: Conjunto de dados (DataFrame ou ndarray)
-        nrefs: Quantidade de conjuntos de referência que serão criados
-        maxClusters: Número máximo de clusters que serão testados
-    Return: (melhor_k, resultsDf)
+        data: Dataset (DataFrame or ndarray)
+        nrefs: Number of reference sets to be created
+        min_clusters: Minimum number of clusters to be tested
+        max_clusters: Maximum number of clusters to be tested
+    Return: (best_k, results_df)
     """
 
     if isinstance(data, pd.DataFrame):
@@ -42,27 +44,27 @@ def gap_statistic_method(data, nrefs=3, min_clusters=2, max_clusters=15):
     for gap_index, k in enumerate(range(min_clusters, max_clusters)):
         ref_disps = np.zeros(nrefs)
 
-        # Para n referências, gere uma amostra aleatória e execute o algoritmo K-means,
-        # obtendo a dispersão resultante de cada iteração.
+        # For n references, generate a random sample and run the K-means algorithm,
+        # obtaining the resulting dispersion from each iteration.
         for i in range(nrefs):
-            # Criar conjunto aleatório de referência
+            # Create random reference set
             random_reference = np.random.random_sample(size=data.shape)
 
-            # Aplicar o K-means no conjunto de referência
+            # Apply K-means to the reference set
             kmeans = KMeans(k)
             kmeans.fit(random_reference)
             ref_disp = kmeans.inertia_
             ref_disps[i] = ref_disp
 
-        # Aplicar o K-means no conjunto de dados original e calculaar a dispersão
+        # Apply K-means to the original dataset and calculate the dispersion
         kmeans = KMeans(k)
         kmeans.fit(data)
         orig_disp = kmeans.inertia_
 
-        # Calcular o GAP Statistic
+        # Calculate the GAP Statistic
         gap = np.log(np.mean(ref_disps)) - np.log(orig_disp)
 
-        # Armazenar o resultado do GAP Statistic
+        # Store the GAP Statistic result
         gaps[gap_index] = gap
         df_result.loc[gap_index] = [k, gap]
 
@@ -87,29 +89,31 @@ def gap_statistic_method(data, nrefs=3, min_clusters=2, max_clusters=15):
 
 def elbow_method(data, min_clusters=2, max_clusters=10):
     """
-    Implementação do método de cotovelo para encontrar o número ideal de clusters.
+    Implementation of the elbow method to find the optimal number of clusters.
 
     Params:
-        data: ndarray de forma (n_samples, n_features)
-            O conjunto de dados a ser agrupado.
-        max_clusters: int, opcional (padrão=10)
-            O número máximo de clusters a serem testados.
+        data: ndarray of shape (n_samples, n_features)
+            The dataset to be clustered.
+        min_clusters: int, optional (default=2)
+            The minimum number of clusters to be tested.
+        max_clusters: int, optional (default=10)
+            The maximum number of clusters to be tested.
 
     Return:
-        (indice_maior_elbow, resultsDf)
+        (best_elbow_index, results_df)
     """
-    distortions = []  # Armazena a soma dos quadrados das distâncias intra-cluster
+    distortions = []  # Stores the sum of squared intra-cluster distances
     df_result = pd.DataFrame({"qty_clusters": [], "distortions": []})
 
     for i, k in enumerate(range(min_clusters, max_clusters + 1)):
         kmeans = KMeans(n_clusters=k, random_state=42)
         kmeans.fit(data)
 
-        # Armazenar o resultado do soma dos quadrados das distâncias intra-cluster
+        # Store the sum of squared intra-cluster distances result
         distortions.append(kmeans.inertia_)
         df_result.loc[i] = [k, kmeans.inertia_]
 
-    # Encontrar o ponto de cotovelo (método mais simples - procurando a maior inclinação)
+    # Find the elbow point (simplest method - looking for the steepest slope)
     differences = np.diff(distortions)
     best_k_index = np.argmax(differences)
     best_k = df_result.iloc[best_k_index]["qty_clusters"]
@@ -136,21 +140,21 @@ def elbow_method(data, min_clusters=2, max_clusters=10):
 
 def silhouette_score_method(data, min_clusters=2, max_clusters=15):
     """
-    Implementação do Silhouette Score para determinar o número ideal de clusters usando K-means.
+    Implementation of the Silhouette Score to determine the optimal number of clusters using K-means.
 
     Params:
-        data: ndarray de forma (n_samples, n_features)
-            O conjunto de dados a ser agrupado.
-        min_clusters: int, opcional (padrão=3)
-            O número mínimo de clusters a serem testados.
-        max_clusters: int, opcional (padrão=10)
-            O número máximo de clusters a serem testados.
+        data: ndarray of shape (n_samples, n_features)
+            The dataset to be clustered.
+        min_clusters: int, optional (default=2)
+            The minimum number of clusters to be tested.
+        max_clusters: int, optional (default=15)
+            The maximum number of clusters to be tested.
 
     Return:
-        indice_maior_silhueta: int
-            O número ideal de clusters com base no Silhouette Score.
-        resultsDf: DataFrame
-            Dataframe contendo os Silhouette Scores para cada número de clusters testado.
+        best_silhouette_index: int
+            The optimal number of clusters based on the Silhouette Score.
+        results_df: DataFrame
+            DataFrame containing the Silhouette Scores for each number of clusters tested.
     """
 
     silhouette_scores = []
@@ -282,14 +286,14 @@ def davies_bouldin_index_method(data, min_clusters=3, max_clusters=10):
         ax=ax,
     )
 
-    ax.set_xlabel("Número de clusters")
-    ax.set_ylabel("Índice Davies-Bouldin")
-    ax.set_title("Índice Davies-Bouldin para K-means")
+    ax.set_xlabel("Number of clusters")
+    ax.set_ylabel("Davies-Bouldin Index")
+    ax.set_title("Davies-Bouldin Index for K-means")
     ax.axvline(
         x=best_k,
         color="red",
         linestyle="--",
-        label=f"Número ideal de clusters: {best_k}",
+        label=f"Optimal number of clusters: {best_k}",
     )
     # ax.legend()
 
@@ -354,7 +358,7 @@ def calculate_dunn_index(X, labels, centroids):
         centroids (np.array): Os centroides dos clusters.
 
     Returns:
-        float: O valor do Índice de Dunn.
+        float: The Dunn Index value.
     """
     unique_labels = np.unique(labels)
     num_clusters = len(unique_labels)
@@ -362,7 +366,7 @@ def calculate_dunn_index(X, labels, centroids):
     if num_clusters < 2:
         return 0.0
 
-    # Calcular a menor distância inter-cluster
+    # Calculate the minimum inter-cluster distance
     min_inter_cluster_dist = float("inf")
     for i in range(num_clusters):
         for j in range(i + 1, num_clusters):
@@ -370,7 +374,7 @@ def calculate_dunn_index(X, labels, centroids):
             if dist < min_inter_cluster_dist:
                 min_inter_cluster_dist = dist
 
-    # Calcular a maior distância intra-cluster
+    # Calculate the maximum intra-cluster distance
     max_intra_cluster_dist = 0.0
     for label in unique_labels:
         cluster_points = X[labels == label]
@@ -415,20 +419,20 @@ def calculate_shannon_entropy(dados):
 
 def calculate_linear_entropy(scores):
     """
-    Calcula uma medida de entropia linear.
+    Calculates a linear entropy measure.
 
     Args:
-        scores (np.array): Uma matriz de pontuações.
+        scores (np.array): An array of scores.
 
     Returns:
-        float: O valor da entropia linear arredondado para 3 casas decimais.
+        float: The linear entropy value rounded to 3 decimal places.
     """
-    entropia_ideal = np.linspace(np.min(scores), np.max(scores), len(scores))
-    absolute_difference = np.abs(scores - entropia_ideal)
+    ideal_entropy = np.linspace(np.min(scores), np.max(scores), len(scores))
+    absolute_difference = np.abs(scores - ideal_entropy)
     system_entropy = np.sum(absolute_difference)
     max_entropy_system = np.full(len(scores), np.min(scores))
     max_entropy_system[-1] = np.max(scores)
-    max_entropy_system = np.abs(max_entropy_system - entropia_ideal)
+    max_entropy_system = np.abs(max_entropy_system - ideal_entropy)
     max_entropy = np.sum(max_entropy_system)
     result = 1 - (system_entropy / max_entropy)
     return round(result, 3)
@@ -436,14 +440,14 @@ def calculate_linear_entropy(scores):
 
 def calculate_pca(df):
     """
-    Calcula a Análise de Componentes Principais (PCA) e retorna os loadings.
+    Calculates Principal Component Analysis (PCA) and returns the loadings.
 
     Args:
-        df (pd.DataFrame): O DataFrame de dados.
+        df (pd.DataFrame): The data DataFrame.
 
     Returns:
-        pd.DataFrame: Um DataFrame com os loadings PCA e o ranking
-                      das variáveis por influência na PC1.
+        pd.DataFrame: A DataFrame with PCA loadings and ranking
+                      of variables by influence on PC1.
     """
     pca = PCA(n_components=len(df.columns))
     pca.fit(df)

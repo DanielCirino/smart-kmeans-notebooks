@@ -10,7 +10,7 @@ def datasets():
     config = load_config()
     full_path = config["datasets"][5]
 
-    # Nomes das colunas a serem ignoradas, conforme o notebook original
+    # Column names to be ignored, according to the original notebook
     cols_to_ignore = ["RendaMedia"]
     id_column = "Cod_Setor"
 

@@ -17,15 +17,15 @@ pio.templates.default = "plotly"
 
 def evaluate_cluster(df, n_clusters):
     """
-    Avalia a clusterização K-Means para um número específico de clusters.
+    Evaluates K-Means clustering for a specific number of clusters.
 
     Args:
-        df (pd.DataFrame): O DataFrame de dados.
-        n_clusters (int): O número de clusters a ser testado.
+        df (pd.DataFrame): The data DataFrame.
+        n_clusters (int): The number of clusters to be tested.
 
     Returns:
-        dict: Um dicionário com os resultados da avaliação, incluindo
-              pontuações, rótulos e detalhes do cluster.
+        dict: A dictionary with evaluation results, including
+              scores, labels and cluster details.
     """
 
     kmeans = KMeans(n_clusters=n_clusters, random_state=0)
@@ -68,19 +68,19 @@ def evaluate_cluster(df, n_clusters):
     }
 
 
-def evaluate_grouping_options(dataset, qtd_min_clusters, qtd_max_clusters):
+def evaluate_grouping_options(dataset, min_clusters, max_clusters):
     """
-    Avalia a clusterização K-Means para um intervalo de clusters.
+    Evaluates K-Means clustering for a range of clusters.
 
     Args:
-        qtd_min_clusters (int): O número mínimo de clusters a ser testado.
-        qtd_max_clusters (int): O número máximo de clusters a ser testado.
-        dataset (pd.DataFrame): O DataFrame de dados.
+        min_clusters (int): The minimum number of clusters to be tested.
+        max_clusters (int): The maximum number of clusters to be tested.
+        dataset (pd.DataFrame): The data DataFrame.
 
     Returns:
-        list: Uma lista de dicionários contendo os results para cada arranjo.
+        list: A list of dictionaries containing the results for each arrangement.
     """
-    range_clusters = range(qtd_min_clusters, qtd_max_clusters + 1)
+    range_clusters = range(min_clusters, max_clusters + 1)
     results = []
 
     for i, k in enumerate(range_clusters):
@@ -236,18 +236,18 @@ def get_best_grouping_option(valid_results):
 
 def print_cluster_details(cluster):
     """
-    Imprime os detalhes de um arranjo de cluster em formato de tabela HTML.
+    Prints cluster arrangement details in HTML table format.
 
     Args:
-        cluster (dict): Um dicionário contendo os detalhes do cluster.
+        cluster (dict): A dictionary containing cluster details.
     """
     html_content = f"""
-    <h4> Detalhes do Arranjo</h4>
+    <h4>Arrangement Details</h4>
     <hr>
     <ul>
-        <li><b>Arranjo</b>: {cluster["cluster"]}</li>
-        <li><b>Qtd. Grupos</b>: {cluster["num_clusters"]}</li>
-        <li><b>Silhueta média</b>: {cluster["score"]:.4f}</li>
+        <li><b>Arrangement</b>: {cluster["cluster"]}</li>
+        <li><b>Number of Groups</b>: {cluster["num_clusters"]}</li>
+        <li><b>Average Silhouette</b>: {cluster["score"]:.4f}</li>
         <li><b>Davies-Bouldin Index</b>: {cluster["davies_bouldin_scoree"]:.4f}</li>
         <li><b>Dunn Index</b>: {cluster["dunn_score"]:.4f}</li>
     </ul>
@@ -366,12 +366,12 @@ def get_grouping_analysis_graph(arranjo, df):
         cluster["mean_silhouette"],
     )
 
-    # Criar um gráfico com 1 linha e 2 colunas
+    # Create a plot with 1 row and 2 columns
     fig, (ax1, ax2) = plt.subplots(1, 2)
     fig.set_size_inches(18, 7)
 
-    # Gráfico para exibir a silhueta
-    # Definir os limites
+    # Plot to display silhouette
+    # Set the limits
     ax1.set_xlim([-0.1, 1])
     ax1.set_ylim([0, len(df) + (cluster["qty_groups"] + 1) * 10])
 

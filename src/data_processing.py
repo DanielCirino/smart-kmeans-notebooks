@@ -62,9 +62,9 @@ def prepare_data(df, cols_to_drop=list[str]):
     # 1. Drop unnecessary columns
     df_prepared = df_prepared.drop(columns=cols_to_drop)
 
-    # 2. Handle missing values (na sua pesquisa, optamos por remover)
+    # 2. Handle missing values (in your research, we chose to remove them)
     if df_prepared.isnull().any().any():
-      print("    -> Removendo linhas com valores nulos.")
+      print("    -> Removing rows with null values.")
       df_prepared.dropna(inplace=True)
 
     return df_prepared
