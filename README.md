@@ -257,14 +257,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
+**Author**: Daniel Cirino Martins  
+**ORCID**: [0009-0002-5304-9185](https://orcid.org/0009-0002-5304-9185)
+
 For questions, collaborations, or support:
 - **Issues**: Open a GitHub issue for technical questions
-- **Discussions**: Use GitHub Discussions for general questions
+- **Discussions**: Use GitHub Discussions for general questions  
 - **Contributions**: See contributing guidelines above
+- **Academic Collaboration**: Contact via ORCID profile
 
 ---
 
 **Compliance Note**: This repository follows PLOS Computational Biology guidelines for code sharing, ensuring full reproducibility and unrestricted access to all research code and data.
-
-## Contact
-[Add your contact information]

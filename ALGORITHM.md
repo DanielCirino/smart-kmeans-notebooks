@@ -8,7 +8,7 @@ This document describes the Smart K-Means algorithm with entropy-based feature s
 
 **Version:** 1.0.0  
 **Date:** August 31, 2025  
-**Authors:** Daniel Cirino Martins  
+**Authors:** Daniel Cirino Martins ([ORCID: 0009-0002-5304-9185](https://orcid.org/0009-0002-5304-9185))  
 **Implementation:** `src/smart_k_means.py::calculate_best_k_with_entropy()`
 
 ## Algorithm Description
