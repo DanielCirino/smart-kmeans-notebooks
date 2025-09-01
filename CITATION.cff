@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
 title: "Smart K-Means Analysis for Social Exclusion Indicators"
-version: 1.0.0
+version: 1.0.1
 date-released: 2025-08-31
 url: "https://github.com/DanielCirino/smart-kmeans-notebooks"
 repository-code: "https://github.com/DanielCirino/smart-kmeans-notebooks"

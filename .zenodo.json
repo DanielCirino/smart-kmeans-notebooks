@@ -53,7 +53,7 @@
   "upload_type": "software",
   "access_right": "open",
   "language": "eng",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publication_date": "2025-08-31",
   "notes": "This software implements a novel Smart K-Means algorithm with entropy-based feature selection for social exclusion analysis. The repository includes complete source code, documentation, and reproducible analysis notebooks following PLOS Computational Biology guidelines.",
   "related_identifiers": [
