@@ -26,7 +26,7 @@ from src.settings import load_config
 def gap_statistic_method(data, nrefs=3, min_clusters=2, max_clusters=15):
     """
     Calculate the optimal number of clusters using the Gap Statistic method.
-    
+
     Params:
         data: Dataset (DataFrame or ndarray)
         nrefs: Number of reference sets to be created
@@ -391,7 +391,16 @@ def calculate_dunn_index(X, labels, centroids):
     return dunn_index
 
 
-def calculate_shannon_entropy(dados):
+def calculate_shannon_entropy(values):
+    unique_values, value_counts = np.unique(values, return_counts=True)
+    value_probs = value_counts / len(values)
+    entropy = -np.sum(
+        value_probs * np.log2(value_probs + 1e-10)
+    )  # Adicionando um pequeno valor para evitar log(0)
+    return entropy
+
+
+def _calculate_shannon_entropy(dados):
     """
     Calcula a entropia de Shannon de uma série de dados.
 

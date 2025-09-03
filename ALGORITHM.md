@@ -8,8 +8,17 @@ This document describes the Smart K-Means algorithm with entropy-based feature s
 
 **Version:** 1.0.0  
 **Date:** August 31, 2025  
-**Authors:** Daniel Cirino Martins ([ORCID: 0009-0002-5304-9185](https://orcid.org/0009-0002-5304-9185))  
+**Authors:** 
+- Daniel Cirino Martins ([ORCID: 0009-0002-5304-9185](https://orcid.org/0009-0002-5304-9185)) - UNIMONTES
+- Marcos Flávio Silveira Vasconcelos D'Angelo - UNIMONTES
+- Matheus Pereira Libório - UNIMONTES
+- Petr Ekel - PUC Minas
+- Honovan Paz Rocha - UNIMONTES
+- Douglas Alexandre Gomes Vieira - CEFET-MG
+- Laura Cozzi Ribeiro - PUC Minas
+- Maria Fernanda Oliveira Guimarães - PUC Minas  
 **Implementation:** `src/smart_k_means.py::calculate_best_k_with_entropy()`
+**Published:** SBPO 2024 - LVI Simpósio Brasileiro de Pesquisa Operacional
 
 ## Algorithm Description
 

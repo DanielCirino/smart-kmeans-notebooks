@@ -113,13 +113,13 @@ def evaluate_grouping_options(dataset, min_clusters, max_clusters):
     return results
 
 
-def calculate_dataset_entropy(df):
+def calculate_dataset_entropy(df, decimals=10):
     entropies = []
     for col in df.columns.to_list():
         entropies.append(
             {
                 "subindicator": col,
-                "entropy": calculate_shannon_entropy(df[col].round(4)),
+                "entropy": calculate_shannon_entropy(df[col].round(decimals)),
             }
         )
 
